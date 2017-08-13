@@ -1,0 +1,30 @@
+{
+  "name": "image-search-abstraction-layer",
+  "version": "1.0.0",
+  "description": "git remote add origin git@github.com:kpicaza/image-search.git",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node app/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpicaza/image-search.git"
+  },
+  "author": "kpicaza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kpicaza/image-search/issues"
+  },
+  "homepage": "https://github.com/kpicaza/image-search#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongo": "^0.1.0",
+    "mongodb": "^2.2.31",
+    "node-env-file": "^0.1.8",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-rc.3",
+    "rsvp": "^4.0.1"
+  }
+}
