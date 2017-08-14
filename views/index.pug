@@ -27,8 +27,47 @@ div(class="container")
             hr
             div(class="card-block")
                 h4(class="card-title") Make search:
+                div(class="card")
+                    div(class="card-block")
+                        table(class="table")
+                            thead
+                                tr
+                                    th params
+                                    th type
+                                    th description
+                            tbody
+                                tr
+                                    td query
+                                    td string
+                                    td Query to make search
+
+                                tr
+                                    td offset
+                                    td number
+                                    td Number of items to ignore before first result,
+
                 div(class="card bg-inverse")
                     div(class="card-block")
                         pre
-                            code(class="text-white")= 'curl POST '  + siteUrl + 'api/images'
+                            code(class="text-white")= 'curl -X GET \\\n  \'' + siteUrl + 'api/images?query=cats&offset=11\''
 
+            div(class="card-block")
+                h4(class="card-title") Response
+                div(class="card bg-inverse")
+                    div(class="card-block")
+                        pre
+                            code(class="text-white")='[\n    {\n        "url": "https://media1.popsugar-assets.com/files/thumbor/ALaiIjt9_aXqNhhlToI1EDSaWv4/fit-in/550x550/filters:format_auto-!!-:strip_icc-!!-/2016/09/28/959/n/1922243/499d595c_edit_img_image_14690959_1475099788/i/Blind-Cat-Picks-His-Own-Cat-Friend.png",\n        "snippet": "Take Your Cat on an Adventure Day | Video | POPSUGAR Pets",\n        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvW24pzXkt_zCyZdGxEe7F0Jw7HaM969tWlrQX_82zUUkq2TjFbhACZnjj",\n        "context": "https://www.popsugar.com/pets/Take-Your-Cat-Adventure-Day-Video-41633065"\n    },\n    ...\n]'
+
+            div(class="card-block")
+                h4(class="card-title") Get recent searches:
+                div(class="card bg-inverse")
+                    div(class="card-block")
+                        pre
+                            code(class="text-white")= 'curl -X GET \\\n  \'' + siteUrl + 'api/recent-searches\''
+
+            div(class="card-block")
+                h4(class="card-title") Response
+                div(class="card bg-inverse")
+                    div(class="card-block")
+                        pre
+                            code(class="text-white")= '[\n    {\n        "query": "nwa",\n        "offset": "1",\n        "ocurred_on": "2017-08-14T01:38:46.622Z"\n    },\n    {\n        "query": "the childs and the hood",\n        "offset": "1",\n        "ocurred_on": "2017-08-14T01:38:14.739Z"\n    },\n    ...\n]'
